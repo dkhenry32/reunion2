@@ -1,0 +1,36 @@
+<%= form_for(@relationship) do |f| %>
+  <% if @relationship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@relationship.errors.count, "error") %> prohibited this relationship from being saved:</h2>
+
+      <ul>
+      <% @relationship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% f.label :relative_user_id %><br>
+
+    <%= f.collection_select(:relative_user_id, User.all, :id, :Name) %>
+
+  </div>
+  <div class="field">
+    <% f.label :relationship_type %>
+
+    IS THE
+    <br>
+    <%= f.select :relationship_type, ["Mom","Father","Brother","Sister","Son","Daughter","Uncle","Aunt","Cousin"] %>
+  </div>
+  <div class="field">
+    <% f.label :user_id %>
+    OF
+    <br>
+    <%= f.collection_select(:user_id, User.all, :id, :Name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

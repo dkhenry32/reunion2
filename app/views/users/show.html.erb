@@ -1,0 +1,127 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.Name %>
+</p>
+
+<p>
+  <strong>Mailing_Address:</strong>
+  <%= @user.Mailing_Address %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.Gender %>
+</p>
+
+<p>
+  <strong>Date_of_Birth :</strong>
+  <%= @user.Date_of_Birth %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <strong>relationships:</strong>
+</p>
+<p>
+  <table name="tbl_relationship">
+    <tr>
+      <th>Father</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Father' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    <tr>
+      <th>Mom</th>
+     <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Mom' %>
+           <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    <tr>
+      <th>Brother</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Brother' %>
+           <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    <tr>
+      <th>Sister</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Sister' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    </tr>
+    <tr>
+      <th>Son</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Son' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    <tr>
+      <th>Daughter</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Daughter' %>
+           <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    <tr>
+      <th>Uncle</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Uncle' %>
+          <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    <tr>
+      <th>Aunt</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Aunt' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+    <tr>
+      <th>Cousin</th>
+      <td>
+     <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Cousin' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+</table>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
