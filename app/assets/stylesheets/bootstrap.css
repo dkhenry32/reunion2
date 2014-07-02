@@ -197,7 +197,7 @@ th {
   }
   a{ color: blue;
      font-size: 14pt;
-    },
+  }
   a:visited {
     text-decoration: underline;
   }
