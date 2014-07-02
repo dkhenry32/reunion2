@@ -14,7 +14,7 @@
   <div class="field">
     <% f.label :relative_user_id %><br>
 
-    <%= f.collection_select(:relative_user_id, User.all, :id, :Name) %>
+    <%= f.collection_select(:relative_user_id, User.all, :id, :name) %>
 
   </div>
   <div class="field">
@@ -28,7 +28,7 @@
     <% f.label :user_id %>
     OF
     <br>
-    <%= f.collection_select(:user_id, User.all, :id, :Name) %>
+    <%= f.collection_select(:user_id, User.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit 'Create Relationship', :class => 'btn btn-success' %>

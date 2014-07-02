@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20140624211350) do
 
   create_table "families", force: true do |t|
-    t.string   "Name"
-    t.text     "Mailing_Address"
-    t.string   "Gender"
-    t.date     "Date_of_Birth"
+    t.string   "name"
+    t.text     "mailing_address"
+    t.string   "gender"
+    t.date     "date_of_birth"
     t.text     "bio"
     t.integer  "relationship_id"
     t.integer  "user_id"
@@ -39,17 +39,17 @@ ActiveRecord::Schema.define(version: 20140624211350) do
   add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "Name"
-    t.string   "Mailing_Address"
-    t.text     "Address"
-    t.string   "Gender"
-    t.date     "Date_of_Birth"
-    t.integer  "Relationship_id"
+    t.string   "name"
+    t.string   "mailing_address"
+    t.text     "address"
+    t.string   "gender"
+    t.date     "date_of_birth"
+    t.integer  "relationship_id"
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["Relationship_id"], name: "index_users_on_Relationship_id"
+  add_index "users", ["relationship_id"], name: "index_users_on_relationship_id"
 
 end

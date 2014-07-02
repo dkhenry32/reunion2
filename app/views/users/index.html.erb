@@ -15,10 +15,10 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.Name %></td>
-        <td><%= user.Mailing_Address %></td>
-        <td><%= user.Gender %></td>
-        <td><%= user.Date_of_Birth %></td>
+        <td><%= user.name %></td>
+        <td><%= user.mailing_address %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.date_of_birth %></td>
         <td><%= user.bio %></td>
         <td><%= user.tot_fam %></td>
         <td><%= link_to 'Show', user, :class => 'btn btn-primary'%></td>
