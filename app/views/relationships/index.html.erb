@@ -1,6 +1,7 @@
-<h1>Listing relationships</h1>
+<h1>Listing Relationships</h1>
+<%= link_to 'View Family Member Users', users_path, :class => 'btn btn-primary' %> 
 
-<table>
+<table class="table table-striped" name="tbl_relationship">
   <thead>
     <tr>
       <th></th>
@@ -16,9 +17,9 @@
         <td>  <%= Relationship.dis_name(relationship.relative_user_id) %></td>
         <td> Is the <%= relationship.relationship_type %></td>
         <td>  Of   <%= relationship.user.Name %></td>
-        <td><%= link_to 'Show', relationship %></td>
-        <td><%= link_to 'Edit', edit_relationship_path(relationship) %></td>
-        <td><%= link_to 'Destroy', relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', relationship, :class => 'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_relationship_path(relationship), :class => 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', relationship, method: :delete, :class => 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,5 @@
 
 <br>
 
-<%= link_to 'New Relationship', new_relationship_path %>
+<%= link_to 'New Relationship', new_relationship_path, :class => 'btn btn-success' %>
+<%= link_to "Home", root_path, :class => 'btn btn-default'  %>

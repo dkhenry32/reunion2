@@ -1,3 +1,4 @@
+<div style="width:450px; margin-left:auto;margin-right:auto">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -26,12 +27,41 @@
 </p>
 
 <p>
-  <strong>relationships:</strong>
+  <strong>Relationships:</strong> <%= link_to "Add A Relationship", new_relationship_path, :class => 'btn btn-success' %>
 </p>
 <p>
-  <table name="tbl_relationship">
+</div>
+
+<!-- TAKE OUT TABLE -->
+<!-- <table class="table">
+  <thead>
+    <th>Father<th>
+    <th>Mother<th>
+  </thead>
+  <tbody>
     <tr>
-      <th>Father</th>
+      <td>
+        <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Father' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    <td>
+      <% @user.relationships.each do |relationship| %>
+          <%  if relationship.relationship_type == 'Mom' %>
+            <%=  link_to User.display_name(relationship.relative_user_id), User.find(relationship.relative_user_id) %> 
+          <% end %>
+     <% end %>
+    </td>
+    </tr>
+  </tbody>
+</table> -->
+<!-- TAKE OUT TABLE -->
+<div style="width:450px; margin-left:auto;margin-right:auto">
+  <table class="table table-striped" name="tbl_relationship">
+    <tr>
+      <th>Father:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Father' %>
@@ -41,7 +71,7 @@
     </td>
     </tr>
     <tr>
-      <th>Mom</th>
+      <th>Mom:</th>
      <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Mom' %>
@@ -51,7 +81,7 @@
     </td>
     </tr>
     <tr>
-      <th>Brother</th>
+      <th>Brother:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Brother' %>
@@ -60,7 +90,7 @@
      <% end %>
     </td>
     <tr>
-      <th>Sister</th>
+      <th>Sister:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Sister' %>
@@ -71,7 +101,7 @@
     </tr>
     </tr>
     <tr>
-      <th>Son</th>
+      <th>Son:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Son' %>
@@ -81,7 +111,7 @@
     </td>
     </tr>
     <tr>
-      <th>Daughter</th>
+      <th>Daughter:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Daughter' %>
@@ -91,7 +121,7 @@
     </td>
     </tr>
     <tr>
-      <th>Uncle</th>
+      <th>Uncle:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Uncle' %>
@@ -101,7 +131,7 @@
     </td>
     </tr>
     <tr>
-      <th>Aunt</th>
+      <th>Aunt:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Aunt' %>
@@ -111,7 +141,7 @@
     </td>
     </tr>
     <tr>
-      <th>Cousin</th>
+      <th>Cousin:</th>
       <td>
      <% @user.relationships.each do |relationship| %>
           <%  if relationship.relationship_type == 'Cousin' %>
@@ -121,7 +151,10 @@
     </td>
     </tr>
 </table>
+</div>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div style="width:450px; margin-left:auto;margin-right:auto">
+<%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-warning' %>
+<%= link_to 'Back', users_path, :class => 'btn btn-default' %>
+</div>

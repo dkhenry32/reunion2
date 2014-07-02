@@ -15,5 +15,5 @@
   <%= Relationship.dis_name(@relationship.relative_user_id) %>
 </p>
 
-<%= link_to 'Edit', edit_relationship_path(@relationship) %> |
-<%= link_to 'Back', relationships_path %>
+<%= link_to 'Edit', edit_relationship_path(@relationship), :class => 'btn btn-warning' %>
+<%= link_to 'Back', relationships_path, :class => 'btn btn-default' %>

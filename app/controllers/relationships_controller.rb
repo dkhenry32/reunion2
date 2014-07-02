@@ -28,8 +28,8 @@ class RelationshipsController < ApplicationController
 
     respond_to do |format|
       if @relationship.save
-        format.html { redirect_to @relationship, notice: 'Relationship was successfully created.' }
-        format.json { render :show, status: :created, location: @relationship }
+        format.html { redirect_to relationships_path, notice: 'Relationship was successfully created.' }
+        format.json { render :show, status: :created, location: relationships_path }
       else
         format.html { render :new }
         format.json { render json: @relationship.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class RelationshipsController < ApplicationController
   def update
     respond_to do |format|
       if @relationship.update(relationship_params)
-        format.html { redirect_to @relationship, notice: 'Relationship was successfully updated.' }
-        format.json { render :show, status: :ok, location: @relationship }
+        format.html { redirect_to relationships_path, notice: 'Relationship was successfully updated.' }
+        format.json { render :show, status: :ok, location: relationships_path }
       else
         format.html { render :edit }
         format.json { render json: @relationship.errors, status: :unprocessable_entity }
