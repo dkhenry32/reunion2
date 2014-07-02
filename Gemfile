@@ -40,5 +40,5 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 2.3'
 gem 'will_paginate-bootstrap'
-gem 'rails_12factor'  group: :production
-gem 'pg'  group: :production
+gem 'rails_12factor',  group: :production
+gem 'pg',  group: :production
