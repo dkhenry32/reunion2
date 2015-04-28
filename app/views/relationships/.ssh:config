@@ -1,0 +1,4 @@
+Host heroku.com
+  HostName  heroku.com
+  IdentityFile /Users/Turtle/.ssh/id.heroku
+  IdentitiesOnly yes
